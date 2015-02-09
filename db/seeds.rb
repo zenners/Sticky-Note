@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Note.destroy_all
+
+Note.create([
+	{title: 'Im the first note ever', content: 'Notes are the best'},
+	{title: 'Im the second note ever', content: 'Notes are the ayt'},
+	{title: 'Im the third note ever', content: 'Notes are the cutest'}
+])
