@@ -3,7 +3,12 @@ window.ScratchPaper =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> 
+  initialize: ->	
+  	@AllNotes = [
+  		{id: 1, title: 'first note', content: 'i dont like coffee'},
+  		{id: 2, title: 'second note', content: 'i like coffee'},
+  		{id: 3, title: 'third note', content: 'i like bubbletea'}
+  	]
   	new @Routers.ScratchPaperRouter
   	Backbone.history.start(pushState: true)
 
