@@ -8,4 +8,18 @@ class App.Models.Note extends Backbone.Model
 		
 	hasAttribute: (attr) -> @has(attr) && @get(attr).trim() != ''
 
+	parse: (data) ->
+		data.content = data.body.content
+		delete data.body
+		data
+
+	toJSON: ->
+	  {
+	    title: @get('title')
+	    body:
+	      type: 'sticky_note'
+	      sticky_note:
+	        content: @get('content')
+	  }
+
 	

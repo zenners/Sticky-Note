@@ -8,25 +8,29 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		note = Note.create(note_params)
+		note = Note.new
+		save_note(note)
 		respond_with note
 	end
 
 	def update
-		note.update_attributes(note_params)
-		respond_with note
+		save_note(note)
+		respond_with (note) do |format|
+			format.json { render json: note }
+		end
 	end
 
 	def destroy
 		respond_with note.destroy
-		
 	end
 
 	private
 
-	def note_params
-		params.permit(:title, :content)
+	def save_note(note)
+		note_form = NoteForm.new(note,params)
+		note_form.save
 	end
+
 
 	def notes
 		@_notes ||= Note.all

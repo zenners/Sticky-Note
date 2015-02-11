@@ -9,7 +9,7 @@
 Note.destroy_all
 
 Note.create([
-	{title: 'Im the first note ever', content: 'Notes are the best'},
-	{title: 'Im the second note ever', content: 'Notes are the ayt'},
-	{title: 'Im the third note ever', content: 'Notes are the cutest'}
+	{title: 'Im the first note', body: StickyNote.new(content: 'Notes are the best')},
+	{title: 'Im the second note', body: StickyNote.new(content: 'Notes are the ayt')},
+	{title: 'Im the third note', body: StickyNote.new(content: 'Notes are the cutest')}
 ])

@@ -64,8 +64,16 @@
 		}
 	}
 
-	.footer {
+	.editting-footer {
 		display: none;
+	}
+
+	.normal-footer {
+		color: gray;
+		border-top: 1px solid gray;
+		padding-top: 10px;
+		font-size: 0.8em;
+
 	}
 
 	.destroy-note {
@@ -84,8 +92,12 @@
 	&.editting {
 		border-color: blue;
 
-		.footer {
+		.editting-footer {
 			display: block;
+		}
+
+		.normal-footer {
+			display: none;
 		}
 	}
 
